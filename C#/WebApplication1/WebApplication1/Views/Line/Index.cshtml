@@ -1,0 +1,21 @@
+﻿
+@model WebApplication1.Models.Line
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<form action="/Line/Save" method="post">
+    <select id="BusinessUnit" name="BusinessUnit">
+        <option value=""></option>
+        @foreach (SelectListItem item in ViewBag.Business)
+        {
+            <option value="@item.Value">@item.Text</option>
+        }
+    </select>
+    <button type="submit">Send</button>
+</form>
+
+

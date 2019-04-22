@@ -1,0 +1,25 @@
+﻿@using WebApplication1.Models
+
+@{
+    ViewBag.Title = "View";
+}
+
+<h2>View</h2>
+
+<form action="/Line/Edit" method="post">
+    <select id="BusinessUnit" name="BusinessUnit">
+        <option value=""></option>
+        @foreach (SelectListItem item in ViewBag.Business)
+        {
+            if (item.Selected == true)
+            {
+                <option value="@item.Value" selected="selected">@item.Text</option>
+            }
+            else
+            {
+                <option value="@item.Value">@item.Text</option>
+            }
+        }
+    </select>
+    <button type="submit">Send</button>    
+</form>

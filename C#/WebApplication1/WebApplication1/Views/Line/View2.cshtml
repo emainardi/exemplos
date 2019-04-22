@@ -1,0 +1,21 @@
+﻿
+@{
+    ViewBag.Title = "View2";
+}
+
+<h2>View2</h2>
+
+<select id="BusinessUnit" name="BusinessUnit">
+    @foreach (SelectListItem item in ViewBag.Business)
+    {
+        <option value=""></option>
+        if (item.Selected == true)
+        {
+            <option value="@item.Value" selected="selected">@item.Text</option>
+        }
+        else
+        {
+            <option value="@item.Value">@item.Text</option>
+        }
+    }
+</select>
